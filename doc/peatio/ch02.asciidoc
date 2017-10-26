@@ -1,0 +1,48 @@
+:toc:
+
+== peatio 설치
+
+
+=== peatio clone
+
+```
+git clone https://github.com/muhammednagy/peatio.git
+```
+
+=== setup-local-ubuntu.md 문서 읽기
+ - build from source code and run
+
+
+=== 설치 확인
+
+mysql - RubyMine Database Plugin
+
+redis - RubyMine Redis Servers Plugin
+
+rabbitMQ - http://localhost:15672, guest /guest
+
+bitcoin-qt - gui
+
+peatio daemons & rails
+- ps -ef | grep -v grep | grep "\(\.rb$\|peatio\|rbenv\)" | sort -k 8
+
+=== docker로 설치
+
+consider docker-image
+
+```
+sudo usermod -a -G docker $USER
+id
+
+# logout and login
+id
+```
+
+https://help.ubuntu.com/lts/serverguide/certificates-and-security.html
+https://askubuntu.com/questions/49196/how-do-i-create-a-self-signed-ssl-certificate
+
+https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04
+
+```
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+```
