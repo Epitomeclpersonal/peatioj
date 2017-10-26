@@ -44,7 +44,10 @@ https://askubuntu.com/questions/49196/how-do-i-create-a-self-signed-ssl-certific
 https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04
 
 ```
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+cd doc/docker/conf
+mkdir ssl_keys
+cd ssl_keys
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 ```
 
 ```
