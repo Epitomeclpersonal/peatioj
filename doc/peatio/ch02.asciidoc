@@ -46,3 +46,42 @@ https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificat
 ```
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
 ```
+
+```
+tar czvf /tmp/a.tgz peatio
+cd peatio/doc/docker
+tar xzvf /tmp/a.tgz
+find peatio -type f -exec dos2unix {} \; -print
+```
+
+
+==== README.md
+```
+cd peatio/doc/docker
+docker build -t peatio:base .
+./bin/base.sh
+./bin/webapp.sh
+```
+
+==== ./bin/base.sh
+```
+docker run -d --name redis redis
+docker run -d --name dbmaster -v /dbdata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=ROOT_PASSWORD -e MYSQL_USER=DATABASE_USER -e MYSQL_PASSWORD=PASSWORD -e MYSQL_DATABASE=DATABSE_NAME mysql
+docker run -d --name rabbitmq rabbitmq
+
+```
+
+==== ./bin/webapp.sh
+```
+# build Dockerfile to image peatio:base first !!!
+docker run -d --name webapp \
+  -p 80:80 -p 18080:18080 -p 443:443 \
+  --link rabbitmq:rabbitmq \
+  --link dbmaster:dbmaster \
+  --link redis:redis \
+  peatio:base /sbin/my_init --enable-insecure-key
+
+docker exec -it webapp bash -lc 'cd /home/app/peatio/; git pull;'
+docker exec -it webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake db:migrate;'
+docker exec -it webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake assets:precompile;'
+```
