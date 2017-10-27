@@ -1,4 +1,4 @@
-package com.epitome.peatio.app;
+package com.epitome.peatioj.app;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
