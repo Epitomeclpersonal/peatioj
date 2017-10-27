@@ -1,4 +1,4 @@
-package com.epitome.peatioj.controller;
+package com.epitome.peatioj.controller.ui;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

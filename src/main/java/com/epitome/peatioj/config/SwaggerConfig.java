@@ -19,7 +19,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
  */
 @Configuration
 @ComponentScan(basePackages = {
-        "com.epitome.peatioj.api"
+        "com.epitome.peatioj.controller.api"
 })
 @EnableSwagger2
 public class SwaggerConfig {

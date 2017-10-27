@@ -1,4 +1,4 @@
-package com.epitome.peatioj.api;
+package com.epitome.peatioj.controller.api;
 
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
