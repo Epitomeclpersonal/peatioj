@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {
-        "com.epitome.peatioj.controller"
+        "com.epitome.peatioj.controller",
+        "com.epitome.peatioj.config"
 })
 public class PeatiojApplication {
 
