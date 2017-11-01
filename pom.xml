@@ -17,6 +17,7 @@
 
     <modules>
         <module>worker-jpa</module>
+        <module>worker-web</module>
     </modules>
 
     <build>
