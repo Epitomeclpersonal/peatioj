@@ -26,6 +26,23 @@ bitcoin-qt - gui
 peatio daemons & rails
 - ps -ef | grep -v grep | grep "\(\.rb$\|peatio\|rbenv\)" | sort -k 8
 
+=== restart
+
+```
+cd work/peatio/
+
+ps -ef | grep bitcoind
+bitcoind
+ps -ef | grep bitcoind
+
+ps -ef | grep "\(rbenv\|amqp\|\.rb\)" | grep -v grep | sort -k 8
+bundle exec rake daemons:start
+nohup bundle exec rails server &
+ps -ef | grep "\(rbenv\|amqp\|\.rb\)" | grep -v grep | sort -k 8
+
+http://epitome.iptime.org:3000/ 로 확인
+```
+
 === docker로 설치
 
 consider docker-image
