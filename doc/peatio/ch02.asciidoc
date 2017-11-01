@@ -12,20 +12,32 @@ git clone https://github.com/muhammednagy/peatio.git
 === setup-local-ubuntu.md 문서 읽기
  - build from source code and run
 
+
 === rabbitmq
 ```
 rabbitmqctl add_user test1 test1
 rabbitmqctl set_user_tags test1 administrator
 rabbitmqctl set_permissions -p / test1 ".*" ".*" ".*"
 curl -i -u test1:test1 http://localhost:15672/api/whoami
-rabbitmqctl delete_user guest
 ```
+
+
+=== redis (!!!Caution!!!)
+```
+sudo vi /etc/redis/redis.conf
+# bind 127.0.0.1
+protected-mode no
+
+sudo service redis restart
+netstat -nltp | grep 6379
+```
+
 
 === 설치 확인
 
 mysql - RubyMine Database Plugin
 
-redis - RubyMine Redis Servers Plugin
+redis - ledis - RubyMine Redis Servers Plugin
 
 rabbitMQ - http://localhost:15672, guest /guest
 

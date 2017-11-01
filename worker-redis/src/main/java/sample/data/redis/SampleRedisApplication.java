@@ -19,29 +19,39 @@ package sample.data.redis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
-@SpringBootApplication
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan(basePackages = {
+        "sample.config"
+})
 public class SampleRedisApplication implements CommandLineRunner {
 
-	@Autowired
-	private StringRedisTemplate template;
+    private final StringRedisTemplate template;
 
-	@Override
-	public void run(String... args) throws Exception {
-		ValueOperations<String, String> ops = this.template.opsForValue();
-		String key = "spring.boot.redis.test";
-		if (!this.template.hasKey(key)) {
-			ops.set(key, "foo");
-		}
-		System.out.println("Found key " + key + ", value=" + ops.get(key));
-	}
+    @Autowired
+    public SampleRedisApplication(StringRedisTemplate template) {
+        this.template = template;
+    }
 
-	public static void main(String[] args) throws Exception {
-		// Close the context so it doesn't stay awake listening for redis
-		SpringApplication.run(SampleRedisApplication.class, args).close();
-	}
+    @Override
+    public void run(String... args) throws Exception {
+        ValueOperations<String, String> ops = this.template.opsForValue();
+        String key = "spring.boot.redis.test";
+        if (!this.template.hasKey(key)) {
+            ops.set(key, "foo");
+        }
+        System.out.println("Found key " + key + ", value=" + ops.get(key));
+    }
+
+    public static void main(String[] args) throws Exception {
+        // Close the context so it doesn't stay awake listening for redis
+        SpringApplication.run(SampleRedisApplication.class, args).close();
+    }
 
 }
