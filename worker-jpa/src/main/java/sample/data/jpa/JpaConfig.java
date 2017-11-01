@@ -22,8 +22,8 @@ public class JpaConfig {
 
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://epitome.iptime.org:3306/myDb?createDatabaseIfNotExist=true");
-        dataSource.setUsername("mysqluser");
-        dataSource.setPassword("mysqlpass");
+        dataSource.setUsername("root");
+        dataSource.setPassword("secret");
 
         return dataSource;
     }

@@ -33,6 +33,18 @@ netstat -nltp | grep 6379
 ```
 
 
+== mysql (!!!Caution!!!)
+```
+suddo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+# bind-address          = 127.0.0.1
+#
+sudo service mysql restart
+netstat -nltp | grep 3306
+
+mysql-workbench
+ > Users and Privileges > Limit to Hosts Matching > localhost -> %
+```
+
 === 설치 확인
 
 mysql - RubyMine Database Plugin
