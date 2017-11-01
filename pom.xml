@@ -5,7 +5,7 @@
     <groupId>com.epitome.peatioj</groupId>
     <artifactId>peatioj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +15,9 @@
         <io.springfox.version>2.7.0</io.springfox.version>
     </properties>
 
+    <modules>
+        <module>worker-jpa</module>
+    </modules>
 
     <build>
         <plugins>
