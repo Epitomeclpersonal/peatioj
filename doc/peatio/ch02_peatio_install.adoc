@@ -1,6 +1,6 @@
 :toc:
 
-== peatio 설치
+== ch02. peatio 설치
 
 
 === peatio clone
@@ -33,7 +33,7 @@ netstat -nltp | grep 6379
 ```
 
 
-== mysql (!!!Caution!!!)
+=== mysql (!!!Caution!!!)
 ```
 suddo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 # bind-address          = 127.0.0.1
