@@ -1,3 +1,9 @@
+:toc:
+
 = peatio source code reading
 
-include::ch01.asciidoc[]
+include::ch01_source_read_env.adoc[]
+
+include::ch02_peatio_install.adoc[]
+
+include::ch03_peatio_source.adoc[]
