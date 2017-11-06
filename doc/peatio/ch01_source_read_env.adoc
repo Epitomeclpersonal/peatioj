@@ -26,7 +26,8 @@ VBoxManage modifyhd "ubuntu-artful-17.10-cloudimg.vdi" --resize 30720
 vagrant up
 
 vagrant ssh
-df -k # 30GB DISK 확인
+sudo resize2fs /dev/sda1
+df -h # 30GB DISK 확인
 top # 8GB RAM 확인
 exit
 ```
