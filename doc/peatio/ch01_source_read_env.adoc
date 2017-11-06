@@ -11,21 +11,18 @@ VirtualBox install (https://www.virtualbox.org/wiki/Downloads)
 * change host key
   - 파일 > 환경설정 > 입력 > 가상머신 > 호스트키 조합
 
-=== vagrant
+=== vagrant box
 
 ```
 vagrant init ubuntu/artful64 (https://app.vagrantup.com/ubuntu/boxes/artful64)
 vi Vagrantfile - change gui true, memory(8GB)
 vagrant up
 vagrant halt
-```
 
-=== lubuntu-desktop
-
-* change disk size (30GB) (http://snow-dev.com/increase-disk-space-of-a-vagrant-machine/)
-```
+# change disk size (30GB) (http://snow-dev.com/increase-disk-space-of-a-vagrant-machine/)
 VBoxManage clonehd "ubuntu-artful-17.10-cloudimg.vmdk" "ubuntu-artful-17.10-cloudimg.vdi" --format vdi
 VBoxManage modifyhd "ubuntu-artful-17.10-cloudimg.vdi" --resize 30720
+
 vagrant up
 
 vagrant ssh
@@ -33,6 +30,8 @@ df -k # 30GB DISK 확인
 top # 8GB RAM 확인
 exit
 ```
+
+=== lubuntu-desktop
 
 * change password
 ```
