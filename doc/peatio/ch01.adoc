@@ -2,36 +2,57 @@
 
 == source code reading 환경 구축
 
-=== virtualbox, vagrant and lubuntu-desktop
+=== virtualbox
 
 VirtualBox install (https://www.virtualbox.org/wiki/Downloads)
 
-* change default VM directories (파일 > 일반 > 기본 머신 폴더)
-* change host key (파일 > 환경설정 > 입력 > 가상머신 > 호스트키 조합)
+* change default VM directories
+  - 파일 > 일반 > 기본 머신 폴더
+* change host key
+  - 파일 > 환경설정 > 입력 > 가상머신 > 호스트키 조합
 
-vagrant init ubuntu/zesty64 (https://app.vagrantup.com/ubuntu/boxes/zesty64)
+=== vagrant
+
+```
+vagrant init ubuntu/artful64 (https://app.vagrantup.com/ubuntu/boxes/artful64)
 vi Vagrantfile - change gui true, memory(8GB)
+vagrant up
+vagrant halt
+```
 
-vagrant - change disk size (30GB) (http://snow-dev.com/increase-disk-space-of-a-vagrant-machine/)
-VBoxManage clonehd "source.vmdk" "cloned.vdi" --format vdi
-VBoxManage modifyhd "cloned.vdi" --resize 30720
+=== lubuntu-desktop
 
+* change disk size (30GB) (http://snow-dev.com/increase-disk-space-of-a-vagrant-machine/)
+```
+VBoxManage clonehd "ubuntu-artful-17.10-cloudimg.vmdk" "ubuntu-artful-17.10-cloudimg.vdi" --format vdi
+VBoxManage modifyhd "ubuntu-artful-17.10-cloudimg.vdi" --resize 30720
 vagrant up
 
 vagrant ssh
 df -k # 30GB DISK 확인
 top # 8GB RAM 확인
-sudo passwd ubuntu
-ssh -p 2222 ubuntu@localhost
+exit
+```
 
+* change password
+```
+vagrant ssh
+sudo passwd ubuntu
+exit
+
+ssh -p 2222 ubuntu@localhost
+exit
+```
+
+* install lubuntu-desktop
+```
+vagrant ssh
 sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
 sudo apt install lubuntu-desktop
-
-vagrant help
-vagrant halt
-vagrant up
+exit
+```
 
 [4.2. Installing and Maintaining Guest Additions]
 https://www.virtualbox.org/manual/ch04.html#idm1933
