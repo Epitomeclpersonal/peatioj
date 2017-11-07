@@ -22,6 +22,7 @@
         <module>worker-redis</module>
         <module>worker-web-secure-jdbc</module>
         <module>worker-web-method-security</module>
+        <module>worker-secure</module>
     </modules>
 
     <build>
