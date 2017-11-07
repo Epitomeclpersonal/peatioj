@@ -93,3 +93,12 @@ RubyMine install
 - https://www.jetbrains.com/ruby/download
 - wget https://download.jetbrains.com/ruby/RubyMine-2017.2.4.tar.gz
 - /usr/share/applications 에서 아무거나 desktop 복사해서 편집해서 사용
+
+
+=== xRDP (원격 데스크탑) & 방화벽
+http://c-nergy.be/blog/?p=11184 - [XRDP – How to install it on Ubuntu 17.10 (Beta 2)
+
+http://webdir.tistory.com/206 - [Ubuntu] 우분투 방화벽(UFW) 설정
+
+맥용 Microsoft Remote Desktop
+https://itunes.apple.com/kr/app/microsoft-remote-desktop-8-0/id715768417?mt=12
