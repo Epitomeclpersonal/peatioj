@@ -95,3 +95,5 @@ http://webdir.tistory.com/206 - [Ubuntu] 우분투 방화벽(UFW) 설정
 
 맥용 Microsoft Remote Desktop
 https://itunes.apple.com/kr/app/microsoft-remote-desktop-8-0/id715768417?mt=12
+
+=== 멀티부트
