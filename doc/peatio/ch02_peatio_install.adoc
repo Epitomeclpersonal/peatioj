@@ -2,6 +2,13 @@
 
 == ch02. peatio 설치
 
+=== RubyMine
+
+RubyMine install
+- https://www.jetbrains.com/ruby/download
+- wget https://download.jetbrains.com/ruby/RubyMine-2017.2.4.tar.gz
+- /usr/share/applications 에서 아무거나 desktop 복사해서 편집해서 사용
+
 
 === peatio clone
 

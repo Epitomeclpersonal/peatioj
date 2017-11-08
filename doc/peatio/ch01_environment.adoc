@@ -2,7 +2,8 @@
 
 == ch01. source code reading 환경 구축
 
-=== virtualbox
+=== hypervisor
+==== virtualbox
 
 VirtualBox install (https://www.virtualbox.org/wiki/Downloads)
 
@@ -11,7 +12,7 @@ VirtualBox install (https://www.virtualbox.org/wiki/Downloads)
 * change host key
   - 파일 > 환경설정 > 입력 > 가상머신 > 호스트키 조합
 
-=== vagrant box
+==== vagrant box
 
 ```
 vagrant init ubuntu/artful64 (https://app.vagrantup.com/ubuntu/boxes/artful64)
@@ -32,7 +33,7 @@ top # 8GB RAM 확인
 exit
 ```
 
-=== lubuntu-desktop
+==== lubuntu-desktop
 
 * change password
 ```
@@ -86,14 +87,6 @@ VBoxManage getextradata "VM name"
 ```
 
  - 3차원 가속기 사용하기
-
-=== RubyMine
-
-RubyMine install
-- https://www.jetbrains.com/ruby/download
-- wget https://download.jetbrains.com/ruby/RubyMine-2017.2.4.tar.gz
-- /usr/share/applications 에서 아무거나 desktop 복사해서 편집해서 사용
-
 
 === xRDP (원격 데스크탑) & 방화벽
 http://c-nergy.be/blog/?p=11184 - [XRDP – How to install it on Ubuntu 17.10 (Beta 2)
