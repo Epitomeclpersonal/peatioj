@@ -1,6 +1,6 @@
 :toc:
 
-== ch01. source code reading 환경 구축
+== ch01. ubuntu 환경 구축
 
 === hypervisor
 ==== virtualbox
