@@ -14,6 +14,7 @@ RubyMine install
 
 ```
 git clone https://github.com/muhammednagy/peatio.git
+git checkout 3f2a1cb15c3cf4fd0f664e7cddcf0357274af833
 ```
 
 === setup-local-ubuntu.md 문서 읽기
