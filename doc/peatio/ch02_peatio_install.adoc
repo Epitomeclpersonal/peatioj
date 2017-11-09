@@ -145,3 +145,10 @@ docker exec -it webapp bash -lc 'cd /home/app/peatio/; git pull;'
 docker exec -it webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake db:migrate;'
 docker exec -it webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake assets:precompile;'
 ```
+
+
+=== bitcoin testnet 코인 얻기
+
+testnet에서 주소를 생성하고 다음 사이트에 입력하여 테스트용 비트코인을 얻을 수 있음.
+
+https://testnet.manu.backend.hamburg/faucet
