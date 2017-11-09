@@ -10,14 +10,25 @@ exec $SHELL
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 exec $SHELL
-rbenv install 2.2.1
-echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+```
+
+```
 rbenv install 2.2.1
 RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install 2.2.1
 rbenv global 2.2.1
+```
+
+```
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler
 rbenv rehash
+```
+
+```
 sudo apt-get install mysql-server  mysql-client  libmysqlclient-dev
+```
+
+```
 sudo apt-get install build-essential tcl
 cd /tmp
 curl -O http://download.redis.io/redis-stable.tar.gz
@@ -28,12 +39,8 @@ make test
 sudo make install
 sudo mkdir /etc/redis
 sudo cp /tmp/redis-stable/redis.conf /etc/redis
-cd /etc/re
 cd /etc/redis/
-ls
-cp redis.conf redis.conf.org
 sudo cp redis.conf redis.conf.org
-vi redis.conf
 sudo vi redis.conf
 sudo vi /etc/systemd/system/redis.service
 sudo adduser --system --group --no-create-home redis
@@ -43,47 +50,33 @@ sudo chmod 770 /var/lib/redis
 sudo systemctl start redis
 sudo systemctl status redis
 redis-cli
-cd
-cd work/pe
-cd work/projects/peatio/
-ls
+```
+
+```
 echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list
 wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install rabbitmq-server
 sudo service rabbitmq-server restart
-cd /tmp
-wget http://localhost:15672/cli/rabbitmqadmin
-chmod +x rabbitmqadmin
-wget http://localhost:15672/cli/rabbitmqadmin
-ps -ef| grep rabbit
-sudo service rabbitmq-server stop
-sudo service rabbitmq-server start
-sudo service rabbitmq-server status
-wget http://localhost:15672/cli/rabbitmqadmin
-sudo service rabbitmq-server status
 sudo rabbitmq-plugins enable rabbitmq_management
 sudo service rabbitmq-server restart
 sudo service rabbitmq-server status
+cd /tmp
 wget http://localhost:15672/cli/rabbitmqadmin
 chmod +x rabbitmqadmin
 sudo mv rabbitmqadmin /usr/local/sbin
+```
+
+```
 sudo add-apt-repository ppa:bitcoin/bitcoin
 sudo apt-get update
 sudo apt-get install bitcoind
 mkdir -p ~/.bitcoin
 vim ~/.bitcoin/bitcoin.conf
 bitcoind
-cd
-ls
-cd .bitcoin/
-ls
-cd testnet3/
-ls
-ls -lart
-du -sk .
-cd ..
-du -sk .
+```
+
+```
 sudo apt-get install build-essential chrpath git-core libssl-dev libfontconfig1-dev
 cd /usr/local/share
 PHANTOMJS_VERISON=1.9.8
@@ -92,8 +85,14 @@ sudo tar xjf phantomjs-$PHANTOMJS_VERISON-linux-x86_64.tar.bz2
 sudo ln -s /usr/local/share/phantomjs-$PHANTOMJS_VERISON-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
 sudo ln -s /usr/local/share/phantomjs-$PHANTOMJS_VERISON-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 sudo ln -s /usr/local/share/phantomjs-$PHANTOMJS_VERISON-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+```
+
+```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs
+```
+
+```
 sudo apt-get install imagemagick
 ```
 
