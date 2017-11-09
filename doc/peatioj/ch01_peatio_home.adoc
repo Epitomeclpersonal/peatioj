@@ -1,0 +1,18 @@
+:toc:
+
+== ch04. 홈(로그인/로그아웃) 화면구현
+
+=== 요소기술 분석
+
+[format="csv",,options="header"]
+|===
+"peatio","peatioj"
+"Doorkeeper - awesome OAuth2 provider for your Rails app.
+https://github.com/doorkeeper-gem/doorkeeper","springboot oath2, angular5 oauth2"
+"Gon gem — get your Rails variables in your js
+https://github.com/gazay/gon","springboot freemarker, thymeleaf"
+"Slim - A lightweight templating engine
+http://slim-lang.com/","springboot freemarker, thymeleaf"
+"development/production environment","springboot profile"
+"scss, coffee","angular5"
+|===
