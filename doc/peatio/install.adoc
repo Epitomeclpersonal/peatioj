@@ -1,0 +1,110 @@
+:toc:
+
+== rbenv
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git-core curl zlib1g-dev build-essential                      libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3                      libxml2-dev libxslt1-dev libcurl4-openssl-dev                      python-software-properties libffi-dev
+cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+```
+
+== ruby
+```
+rbenv install 2.2.1
+RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install 2.2.1
+rbenv global 2.2.1
+```
+
+== bundler
+```
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+gem install bundler
+rbenv rehash
+```
+
+== mysql-server
+```
+sudo apt-get install mysql-server  mysql-client  libmysqlclient-dev
+```
+
+== redis
+```
+sudo apt-get install build-essential tcl
+cd /tmp
+curl -O http://download.redis.io/redis-stable.tar.gz
+tar xzvf redis-stable.tar.gz
+cd redis-stable
+make
+make test
+sudo make install
+sudo mkdir /etc/redis
+sudo cp /tmp/redis-stable/redis.conf /etc/redis
+cd /etc/redis/
+sudo cp redis.conf redis.conf.org
+sudo vi redis.conf
+sudo vi /etc/systemd/system/redis.service
+sudo adduser --system --group --no-create-home redis
+sudo mkdir /var/lib/redis
+sudo chown redis:redis /var/lib/redis
+sudo chmod 770 /var/lib/redis
+sudo systemctl start redis
+sudo systemctl status redis
+redis-cli
+```
+
+== rabbitmq-server
+```
+echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install rabbitmq-server
+sudo service rabbitmq-server restart
+sudo rabbitmq-plugins enable rabbitmq_management
+sudo service rabbitmq-server restart
+sudo service rabbitmq-server status
+cd /tmp
+wget http://localhost:15672/cli/rabbitmqadmin
+chmod +x rabbitmqadmin
+sudo mv rabbitmqadmin /usr/local/sbin
+```
+
+== bitcoind
+```
+sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo apt-get update
+sudo apt-get install bitcoind
+mkdir -p ~/.bitcoin
+vim ~/.bitcoin/bitcoin.conf
+bitcoind
+```
+
+== phantomjs
+```
+sudo apt-get install build-essential chrpath git-core libssl-dev libfontconfig1-dev
+cd /usr/local/share
+PHANTOMJS_VERISON=1.9.8
+sudo wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERISON-linux-x86_64.tar.bz2
+sudo tar xjf phantomjs-$PHANTOMJS_VERISON-linux-x86_64.tar.bz2
+sudo ln -s /usr/local/share/phantomjs-$PHANTOMJS_VERISON-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+sudo ln -s /usr/local/share/phantomjs-$PHANTOMJS_VERISON-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+sudo ln -s /usr/local/share/phantomjs-$PHANTOMJS_VERISON-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+```
+
+== nodejs
+```
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs
+```
+
+== imagemagick
+```
+sudo apt-get install imagemagick
+```
+

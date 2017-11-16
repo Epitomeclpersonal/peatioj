@@ -2,11 +2,19 @@
 
 == ch02. peatio 설치
 
+=== RubyMine
+
+RubyMine install
+- https://www.jetbrains.com/ruby/download
+- wget https://download.jetbrains.com/ruby/RubyMine-2017.2.4.tar.gz
+- /usr/share/applications 에서 아무거나 desktop 복사해서 편집해서 사용
+
 
 === peatio clone
 
 ```
 git clone https://github.com/muhammednagy/peatio.git
+git checkout 3f2a1cb15c3cf4fd0f664e7cddcf0357274af833
 ```
 
 === setup-local-ubuntu.md 문서 읽기
@@ -137,3 +145,10 @@ docker exec -it webapp bash -lc 'cd /home/app/peatio/; git pull;'
 docker exec -it webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake db:migrate;'
 docker exec -it webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake assets:precompile;'
 ```
+
+
+=== bitcoin testnet 코인 얻기
+
+testnet에서 주소를 생성하고 다음 사이트에 입력하여 테스트용 비트코인을 얻을 수 있음.
+
+https://testnet.manu.backend.hamburg/faucet
