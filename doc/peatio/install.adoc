@@ -17,7 +17,6 @@ exec $SHELL
 
 == ruby
 ```
-rbenv install 2.2.1
 RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install 2.2.1
 rbenv global 2.2.1
 ```
