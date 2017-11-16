@@ -23,6 +23,7 @@
         <module>worker-web-secure-jdbc</module>
         <module>worker-web-method-security</module>
         <module>worker-secure</module>
+        <module>worker-angular</module>
     </modules>
 
     <build>
