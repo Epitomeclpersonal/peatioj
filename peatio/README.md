@@ -75,15 +75,15 @@ You must know what you're doing, there's no shortcut. Please get prepared before
 * MySQL
 * RabbitMQ
 
-** More details are in the [doc](doc).
+** More details are in the [doc](home/doc).
 
 
 ### Getting started
 
-* [Setup on Mac OS X](doc/setup-local-osx.md)
-* [Setup on Ubuntu](doc/setup-local-ubuntu.md)
-* [Deploy production server](doc/deploy-production-server.md)
-* [Setup Ethereum Server](doc/eth.md)
+* [Setup on Mac OS X](home/doc/setup-local-osx.md)
+* [Setup on Ubuntu](home/doc/setup-local-ubuntu.md)
+* [Deploy production server](home/doc/deploy-production-server.md)
+* [Setup Ethereum Server](home/doc/eth.md)
 ### API
 
 You can interact with Peatio through API:
