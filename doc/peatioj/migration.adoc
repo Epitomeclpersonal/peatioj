@@ -1,6 +1,11 @@
+:toc:
+:toclevels: 4
+
 == migration
 
 === peatio 디렉토리 재구조화
+
+==== peatio -> peatioj 디렉토리 변환
 
 |===
 |소스 확장자|타겟 디렉토리|타겟 확장자
@@ -39,13 +44,35 @@
 .erb
 |src/main/resources/templates
 |?
+
+|.json.jbuilder
+|src/main/resources
+|?
+
+|기타
+|home
+|?
 |===
 
-=== .rb -> .java 변환
+==== .rb -> .java 변환
+* welcome_controller.rb -> WelcomeController.java
 
-=== .js.coffee -> .js 변환
+==== .css.scss -> .css 변환
+* https://github.com/squins/sass-java-tryout
 
-=== .css.scss -> .css 변환
+==== .js.coffee -> .js 변환
+* http://decaffeinate-project.org/
+```
+cd src/main/resources/static
+find . -name "*.coffee" | xargs decaffeinate
+find . -name "*.coffee" | xargs rm
+```
 
-=== .slim -> .ftl 변환
+==== .slim -> .ftl 변환
+* landing.html.slim -> landing.ftl
 
+=== peatio maven 모듈 추가
+* pom.xml 작성
+* springboot 클래스 작성
+ - org.peatio 패키지 생성
+ - application.properties, data.sql, schema.sql 작성
