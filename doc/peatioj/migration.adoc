@@ -3,6 +3,12 @@
 
 == migration
 
+=== peatio maven 모듈 추가
+* pom.xml 작성
+* springboot 클래스 작성
+ - org.peatio 패키지 생성
+ - application.properties, data.sql, schema.sql 작성
+
 === peatio 디렉토리 재구조화
 
 ==== peatio -> peatioj 디렉토리 변환
@@ -70,9 +76,3 @@ find . -name "*.coffee" | xargs rm
 
 ==== .slim -> .ftl 변환
 * landing.html.slim -> landing.ftl
-
-=== peatio maven 모듈 추가
-* pom.xml 작성
-* springboot 클래스 작성
- - org.peatio 패키지 생성
- - application.properties, data.sql, schema.sql 작성
