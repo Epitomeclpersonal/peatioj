@@ -8,6 +8,8 @@
 
 === routes.rb 참고
 ```
+  scope module: :private do
+...
     resources :markets, :only => :show, :constraints => MarketConstraint do
       resources :orders, :only => [:index, :destroy] do
         collection do
