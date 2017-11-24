@@ -22,10 +22,12 @@
   - 컨트롤러이름_controller.rb, 뷰이름.html.slim : 최종 파일 명
 
 ==== .rb -> .java 변환
-* app/controllers/private/markets_controller.rb -> MarketsController.java
+* src/main/java/
+ - app/controllers/private/markets_controller.rb -> MarketsController.java
 
 ==== .slim -> .ftl 변환
-* templates/app/views/private/markets/show.html.slim -> show.ftl
+* src/main/resources/templates/
+ - app/views/private/markets/show.html.slim -> show.ftl
 
 ==== .css.scss -> .css 변환
 *
