@@ -1,0 +1,27 @@
+:toc:
+:toclevels: 4
+
+== migration markets
+
+=== 화면
+* http://epitome.iptime.org:3000/markets/btccny
+
+=== routes.rb 참고
+```
+    resources :markets, :only => :show, :constraints => MarketConstraint do
+      resources :orders, :only => [:index, :destroy] do
+        collection do
+```
+
+==== .rb -> .java 변환
+* app/controllers/private/markets_controller.rb -> MarketsController.java
+
+==== .slim -> .ftl 변환
+* templates/app/views/private/markets/show.html.slim -> show.ftl
+
+==== .css.scss -> .css 변환
+*
+
+==== .js.coffee -> .js 변환
+*
+
