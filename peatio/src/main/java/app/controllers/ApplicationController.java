@@ -1,4 +1,11 @@
-class ApplicationController < ActionController::Base
+package app.controllers;
+
+import app.helpers.TwoFactorHelper;
+import config.initializers.ActionController_Base;
+
+public class ApplicationController extends ActionController_Base
+        implements  /*SimpleCaptcha::ControllerHelpers,*/ TwoFactorHelper {
+/*
   protect_from_forgery with: :exception
 
   helper_method :current_user, :is_admin?, :current_market, :gon
@@ -9,8 +16,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  include SimpleCaptcha::ControllerHelpers
-  include TwoFactorHelper
+//  include SimpleCaptcha::ControllerHelpers
+//  include TwoFactorHelper
 
   def currency
     "#{params[:ask]}#{params[:bid]}".to_sym
@@ -240,5 +247,5 @@ class ApplicationController < ActionController::Base
   def verified_request?
     super || form_authenticity_token == request.headers['X-XSRF-TOKEN']
   end
-
-end
+*/
+}

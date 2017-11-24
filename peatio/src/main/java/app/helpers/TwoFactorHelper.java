@@ -1,4 +1,7 @@
-module TwoFactorHelper
+package app.helpers;
+
+public interface TwoFactorHelper {
+/*
 
   def two_factor_tag(user)
     locals = {
@@ -24,4 +27,5 @@ module TwoFactorHelper
     locked or expired
   end
 
-end
+*/
+}
