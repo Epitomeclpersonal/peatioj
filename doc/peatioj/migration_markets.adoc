@@ -14,6 +14,12 @@
       resources :orders, :only => [:index, :destroy] do
         collection do
 ```
+* 명명규칙 추론
+  - app/ : 기본
+  - controllers/, views/ : .rb, .slim 위치
+  - private/ : scope 에 따라
+  - markets/ : resource 이름
+  - 컨트롤러이름_controller.rb, 뷰이름.html.slim : 최종 파일 명
 
 ==== .rb -> .java 변환
 * app/controllers/private/markets_controller.rb -> MarketsController.java
