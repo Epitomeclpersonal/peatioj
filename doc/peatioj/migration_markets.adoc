@@ -3,6 +3,9 @@
 
 == migration markets
 
+=== 몀명규칙
+* private -> private1
+
 === 화면
 * http://epitome.iptime.org:3000/markets/btccny
 

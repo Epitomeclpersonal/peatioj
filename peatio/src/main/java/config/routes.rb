@@ -46,7 +46,7 @@ Peatio::Application.routes.draw do
   resources :documents, only: [:show]
   resources :two_factors, only: [:show, :index, :update]
 
-  scope module: :private do
+  scope module: :private1 do
     resource  :id_document, only: [:edit, :update]
 
     resources :settings, only: [:index]
