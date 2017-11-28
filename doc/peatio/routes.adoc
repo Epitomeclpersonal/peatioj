@@ -1,0 +1,260 @@
+                        Prefix Verb     URI Pattern                                         Controller#Action
+                               GET      /oauth/authorize/:code(.:format)                    doorkeeper/authorizations#show
+           oauth_authorization GET      /oauth/authorize(.:format)                          doorkeeper/authorizations#new
+                               POST     /oauth/authorize(.:format)                          doorkeeper/authorizations#create
+                               PATCH    /oauth/authorize(.:format)                          doorkeeper/authorizations#update
+                               PUT      /oauth/authorize(.:format)                          doorkeeper/authorizations#update
+                               DELETE   /oauth/authorize(.:format)                          doorkeeper/authorizations#destroy
+                   oauth_token POST     /oauth/token(.:format)                              doorkeeper/tokens#create
+                  oauth_revoke POST     /oauth/revoke(.:format)                             doorkeeper/tokens#revoke
+            oauth_applications GET      /oauth/applications(.:format)                       doorkeeper/applications#index
+                               POST     /oauth/applications(.:format)                       doorkeeper/applications#create
+         new_oauth_application GET      /oauth/applications/new(.:format)                   doorkeeper/applications#new
+        edit_oauth_application GET      /oauth/applications/:id/edit(.:format)              doorkeeper/applications#edit
+             oauth_application GET      /oauth/applications/:id(.:format)                   doorkeeper/applications#show
+                               PATCH    /oauth/applications/:id(.:format)                   doorkeeper/applications#update
+                               PUT      /oauth/applications/:id(.:format)                   doorkeeper/applications#update
+                               DELETE   /oauth/applications/:id(.:format)                   doorkeeper/applications#destroy
+ oauth_authorized_applications GET      /oauth/authorized_applications(.:format)            doorkeeper/authorized_applications#index
+  oauth_authorized_application DELETE   /oauth/authorized_applications/:id(.:format)        doorkeeper/authorized_applications#destroy
+              oauth_token_info GET      /oauth/token/info(.:format)                         doorkeeper/token_info#show
+                          root GET      /                                                   welcome#index
+                  mails_viewer          /mails                                              MailsViewer::Engine
+                        signin GET      /signin(.:format)                                   sessions#new
+                        signup GET      /signup(.:format)                                   identities#new
+                       signout GET      /signout(.:format)                                  sessions#destroy
+                       failure GET      /auth/failure(.:format)                             sessions#failure
+                               GET|POST /auth/:provider/callback(.:format)                  sessions#create
+                   edit_member GET      /member/edit(.:format)                              members#edit
+                        member PATCH    /member(.:format)                                   members#update
+                               PUT      /member(.:format)                                   members#update
+                 edit_identity GET      /identity/edit(.:format)                            identities#edit
+                      identity PATCH    /identity(.:format)                                 identities#update
+                               PUT      /identity(.:format)                                 identities#update
+               verify_sms_auth GET      /verify/sms_auth(.:format)                          verify/sms_auths#show
+                               PATCH    /verify/sms_auth(.:format)                          verify/sms_auths#update
+                               PUT      /verify/sms_auth(.:format)                          verify/sms_auths#update
+       edit_verify_google_auth GET      /verify/google_auth/edit(.:format)                  verify/google_auths#edit
+            verify_google_auth GET      /verify/google_auth(.:format)                       verify/google_auths#show
+                               PATCH    /verify/google_auth(.:format)                       verify/google_auths#update
+                               PUT      /verify/google_auth(.:format)                       verify/google_auths#update
+                               DELETE   /verify/google_auth(.:format)                       verify/google_auths#destroy
+        authentications_emails POST     /authentications/emails(.:format)                   authentications/emails#create
+     new_authentications_email GET      /authentications/emails/new(.:format)               authentications/emails#new
+    authentications_identities POST     /authentications/identities(.:format)               authentications/identities#create
+  new_authentications_identity GET      /authentications/identities/new(.:format)           authentications/identities#new
+authentications_weibo_accounts DELETE   /authentications/weibo_accounts(.:format)           authentications/weibo_accounts#destroy
+               reset_passwords GET      /reset_passwords(.:format)                          reset_passwords#index
+                               POST     /reset_passwords(.:format)                          reset_passwords#create
+            new_reset_password GET      /reset_passwords/new(.:format)                      reset_passwords#new
+           edit_reset_password GET      /reset_passwords/:id/edit(.:format)                 reset_passwords#edit {:id=>/[a-zA-Z0-9]{32}/}
+                reset_password GET      /reset_passwords/:id(.:format)                      reset_passwords#show {:id=>/[a-zA-Z0-9]{32}/}
+                               PATCH    /reset_passwords/:id(.:format)                      reset_passwords#update {:id=>/[a-zA-Z0-9]{32}/}
+                               PUT      /reset_passwords/:id(.:format)                      reset_passwords#update {:id=>/[a-zA-Z0-9]{32}/}
+                               DELETE   /reset_passwords/:id(.:format)                      reset_passwords#destroy {:id=>/[a-zA-Z0-9]{32}/}
+                new_activation GET      /activations/new(.:format)                          activations#new
+               edit_activation GET      /activations/:id/edit(.:format)                     activations#edit {:id=>/[a-zA-Z0-9]{32}/}
+                    activation PATCH    /activations/:id(.:format)                          activations#update {:id=>/[a-zA-Z0-9]{32}/}
+                               PUT      /activations/:id(.:format)                          activations#update {:id=>/[a-zA-Z0-9]{32}/}
+              documents_api_v2 GET      /documents/api_v2(.:format)                         documents#api_v2
+       documents_websocket_api GET      /documents/websocket_api(.:format)                  documents#websocket_api
+               documents_oauth GET      /documents/oauth(.:format)                          documents#oauth
+                      document GET      /documents/:id(.:format)                            documents#show
+                   two_factors GET      /two_factors(.:format)                              two_factors#index
+                    two_factor GET      /two_factors/:id(.:format)                          two_factors#show
+                               PATCH    /two_factors/:id(.:format)                          two_factors#update
+                               PUT      /two_factors/:id(.:format)                          two_factors#update
+              edit_id_document GET      /id_document/edit(.:format)                         private/id_documents#edit
+                   id_document PATCH    /id_document(.:format)                              private/id_documents#update
+                               PUT      /id_document(.:format)                              private/id_documents#update
+                      settings GET      /settings(.:format)                                 private/settings#index
+              unbind_api_token DELETE   /api_tokens/:id/unbind(.:format)                    private/api_tokens#unbind
+                    api_tokens GET      /api_tokens(.:format)                               private/api_tokens#index
+                               POST     /api_tokens(.:format)                               private/api_tokens#create
+                 new_api_token GET      /api_tokens/new(.:format)                           private/api_tokens#new
+                edit_api_token GET      /api_tokens/:id/edit(.:format)                      private/api_tokens#edit
+                     api_token GET      /api_tokens/:id(.:format)                           private/api_tokens#show
+                               PATCH    /api_tokens/:id(.:format)                           private/api_tokens#update
+                               PUT      /api_tokens/:id(.:format)                           private/api_tokens#update
+                               DELETE   /api_tokens/:id(.:format)                           private/api_tokens#destroy
+                  fund_sources POST     /fund_sources(.:format)                             private/fund_sources#create
+                   fund_source PATCH    /fund_sources/:id(.:format)                         private/fund_sources#update
+                               PUT      /fund_sources/:id(.:format)                         private/fund_sources#update
+                               DELETE   /fund_sources/:id(.:format)                         private/fund_sources#destroy
+             gen_address_funds POST     /funds/gen_address(.:format)                        private/funds#gen_address
+                         funds GET      /funds(.:format)                                    private/funds#index
+    gen_address_deposits_banks POST     /deposits/banks/gen_address(.:format)               private/deposits/banks#gen_address
+                deposits_banks GET      /deposits/banks(.:format)                           private/deposits/banks#index
+                               POST     /deposits/banks(.:format)                           private/deposits/banks#create
+             new_deposits_bank GET      /deposits/banks/new(.:format)                       private/deposits/banks#new
+            edit_deposits_bank GET      /deposits/banks/:id/edit(.:format)                  private/deposits/banks#edit
+                 deposits_bank GET      /deposits/banks/:id(.:format)                       private/deposits/banks#show
+                               PATCH    /deposits/banks/:id(.:format)                       private/deposits/banks#update
+                               PUT      /deposits/banks/:id(.:format)                       private/deposits/banks#update
+                               DELETE   /deposits/banks/:id(.:format)                       private/deposits/banks#destroy
+   gen_address_deposits_ethers POST     /deposits/ethers/gen_address(.:format)              private/deposits/ethers#gen_address
+               deposits_ethers GET      /deposits/ethers(.:format)                          private/deposits/ethers#index
+                               POST     /deposits/ethers(.:format)                          private/deposits/ethers#create
+            new_deposits_ether GET      /deposits/ethers/new(.:format)                      private/deposits/ethers#new
+           edit_deposits_ether GET      /deposits/ethers/:id/edit(.:format)                 private/deposits/ethers#edit
+                deposits_ether GET      /deposits/ethers/:id(.:format)                      private/deposits/ethers#show
+                               PATCH    /deposits/ethers/:id(.:format)                      private/deposits/ethers#update
+                               PUT      /deposits/ethers/:id(.:format)                      private/deposits/ethers#update
+                               DELETE   /deposits/ethers/:id(.:format)                      private/deposits/ethers#destroy
+ gen_address_deposits_satoshis POST     /deposits/satoshis/gen_address(.:format)            private/deposits/satoshis#gen_address
+             deposits_satoshis GET      /deposits/satoshis(.:format)                        private/deposits/satoshis#index
+                               POST     /deposits/satoshis(.:format)                        private/deposits/satoshis#create
+          new_deposits_satoshi GET      /deposits/satoshis/new(.:format)                    private/deposits/satoshis#new
+         edit_deposits_satoshi GET      /deposits/satoshis/:id/edit(.:format)               private/deposits/satoshis#edit
+              deposits_satoshi GET      /deposits/satoshis/:id(.:format)                    private/deposits/satoshis#show
+                               PATCH    /deposits/satoshis/:id(.:format)                    private/deposits/satoshis#update
+                               PUT      /deposits/satoshis/:id(.:format)                    private/deposits/satoshis#update
+                               DELETE   /deposits/satoshis/:id(.:format)                    private/deposits/satoshis#destroy
+            withdraws_satoshis GET      /withdraws/satoshis(.:format)                       private/withdraws/satoshis#index
+                               POST     /withdraws/satoshis(.:format)                       private/withdraws/satoshis#create
+         new_withdraws_satoshi GET      /withdraws/satoshis/new(.:format)                   private/withdraws/satoshis#new
+        edit_withdraws_satoshi GET      /withdraws/satoshis/:id/edit(.:format)              private/withdraws/satoshis#edit
+             withdraws_satoshi GET      /withdraws/satoshis/:id(.:format)                   private/withdraws/satoshis#show
+                               PATCH    /withdraws/satoshis/:id(.:format)                   private/withdraws/satoshis#update
+                               PUT      /withdraws/satoshis/:id(.:format)                   private/withdraws/satoshis#update
+                               DELETE   /withdraws/satoshis/:id(.:format)                   private/withdraws/satoshis#destroy
+               withdraws_banks GET      /withdraws/banks(.:format)                          private/withdraws/banks#index
+                               POST     /withdraws/banks(.:format)                          private/withdraws/banks#create
+            new_withdraws_bank GET      /withdraws/banks/new(.:format)                      private/withdraws/banks#new
+           edit_withdraws_bank GET      /withdraws/banks/:id/edit(.:format)                 private/withdraws/banks#edit
+                withdraws_bank GET      /withdraws/banks/:id(.:format)                      private/withdraws/banks#show
+                               PATCH    /withdraws/banks/:id(.:format)                      private/withdraws/banks#update
+                               PUT      /withdraws/banks/:id(.:format)                      private/withdraws/banks#update
+                               DELETE   /withdraws/banks/:id(.:format)                      private/withdraws/banks#destroy
+              withdraws_ethers GET      /withdraws/ethers(.:format)                         private/withdraws/ethers#index
+                               POST     /withdraws/ethers(.:format)                         private/withdraws/ethers#create
+           new_withdraws_ether GET      /withdraws/ethers/new(.:format)                     private/withdraws/ethers#new
+          edit_withdraws_ether GET      /withdraws/ethers/:id/edit(.:format)                private/withdraws/ethers#edit
+               withdraws_ether GET      /withdraws/ethers/:id(.:format)                     private/withdraws/ethers#show
+                               PATCH    /withdraws/ethers/:id(.:format)                     private/withdraws/ethers#update
+                               PUT      /withdraws/ethers/:id(.:format)                     private/withdraws/ethers#update
+                               DELETE   /withdraws/ethers/:id(.:format)                     private/withdraws/ethers#destroy
+              account_versions GET      /account_versions(.:format)                         private/account_versions#index
+   partial_tree_exchange_asset GET      /exchange_assets/:id/partial_tree(.:format)         private/assets#partial_tree
+               exchange_assets GET      /exchange_assets(.:format)                          private/assets#index
+                               POST     /exchange_assets(.:format)                          private/assets#create
+            new_exchange_asset GET      /exchange_assets/new(.:format)                      private/assets#new
+           edit_exchange_asset GET      /exchange_assets/:id/edit(.:format)                 private/assets#edit
+                exchange_asset GET      /exchange_assets/:id(.:format)                      private/assets#show
+                               PATCH    /exchange_assets/:id(.:format)                      private/assets#update
+                               PUT      /exchange_assets/:id(.:format)                      private/assets#update
+                               DELETE   /exchange_assets/:id(.:format)                      private/assets#destroy
+                 order_history GET      /history/orders(.:format)                           private/history#orders
+                 trade_history GET      /history/trades(.:format)                           private/history#trades
+               account_history GET      /history/account(.:format)                          private/history#account
+           clear_market_orders POST     /markets/:market_id/orders/clear(.:format)          private/orders#clear
+                 market_orders GET      /markets/:market_id/orders(.:format)                private/orders#index
+                  market_order DELETE   /markets/:market_id/orders/:id(.:format)            private/orders#destroy
+       clear_market_order_bids POST     /markets/:market_id/order_bids/clear(.:format)      private/order_bids#clear
+             market_order_bids POST     /markets/:market_id/order_bids(.:format)            private/order_bids#create
+       clear_market_order_asks POST     /markets/:market_id/order_asks/clear(.:format)      private/order_asks#clear
+             market_order_asks POST     /markets/:market_id/order_asks(.:format)            private/order_asks#create
+                        market GET      /markets/:id(.:format)                              private/markets#show
+                   pusher_auth POST     /pusher/auth(.:format)                              private/pusher#auth
+                  close_ticket PATCH    /tickets/:id/close(.:format)                        private/tickets#close
+               ticket_comments POST     /tickets/:ticket_id/comments(.:format)              private/comments#create
+                       tickets GET      /tickets(.:format)                                  private/tickets#index
+                               POST     /tickets(.:format)                                  private/tickets#create
+                    new_ticket GET      /tickets/new(.:format)                              private/tickets#new
+                        ticket GET      /tickets/:id(.:format)                              private/tickets#show
+                   webhooks_tx POST     /webhooks/tx(.:format)                              webhooks#tx
+                  webhooks_eth POST     /webhooks/eth(.:format)                             webhooks#eth
+               admin_dashboard GET      /admin(.:format)                                    admin/dashboard#index
+               admin_documents GET      /admin/documents(.:format)                          admin/documents#index
+                               POST     /admin/documents(.:format)                          admin/documents#create
+            new_admin_document GET      /admin/documents/new(.:format)                      admin/documents#new
+           edit_admin_document GET      /admin/documents/:id/edit(.:format)                 admin/documents#edit
+                admin_document GET      /admin/documents/:id(.:format)                      admin/documents#show
+                               PATCH    /admin/documents/:id(.:format)                      admin/documents#update
+                               PUT      /admin/documents/:id(.:format)                      admin/documents#update
+                               DELETE   /admin/documents/:id(.:format)                      admin/documents#destroy
+            admin_id_documents GET      /admin/id_documents(.:format)                       admin/id_documents#index
+             admin_id_document GET      /admin/id_documents/:id(.:format)                   admin/id_documents#show
+                               PATCH    /admin/id_documents/:id(.:format)                   admin/id_documents#update
+                               PUT      /admin/id_documents/:id(.:format)                   admin/id_documents#update
+        admin_currency_deposit POST     /admin/currency_deposit(.:format)                   admin/currency_deposits#create
+    new_admin_currency_deposit GET      /admin/currency_deposit/new(.:format)               admin/currency_deposits#new
+                  admin_proofs GET      /admin/proofs(.:format)                             admin/proofs#index
+                               POST     /admin/proofs(.:format)                             admin/proofs#create
+               new_admin_proof GET      /admin/proofs/new(.:format)                         admin/proofs#new
+              edit_admin_proof GET      /admin/proofs/:id/edit(.:format)                    admin/proofs#edit
+                   admin_proof GET      /admin/proofs/:id(.:format)                         admin/proofs#show
+                               PATCH    /admin/proofs/:id(.:format)                         admin/proofs#update
+                               PUT      /admin/proofs/:id(.:format)                         admin/proofs#update
+                               DELETE   /admin/proofs/:id(.:format)                         admin/proofs#destroy
+            close_admin_ticket PATCH    /admin/tickets/:id/close(.:format)                  admin/tickets#close
+         admin_ticket_comments POST     /admin/tickets/:ticket_id/comments(.:format)        admin/comments#create
+                 admin_tickets GET      /admin/tickets(.:format)                            admin/tickets#index
+                  admin_ticket GET      /admin/tickets/:id(.:format)                        admin/tickets#show
+           active_admin_member POST     /admin/members/:id/active(.:format)                 admin/members#active
+           toggle_admin_member POST     /admin/members/:id/toggle(.:format)                 admin/members#toggle
+       admin_member_two_factor DELETE   /admin/members/:member_id/two_factors/:id(.:format) admin/two_factors#destroy
+                 admin_members GET      /admin/members(.:format)                            admin/members#index
+                  admin_member GET      /admin/members/:id(.:format)                        admin/members#show
+          admin_deposits_banks GET      /admin/deposits/banks(.:format)                     admin/deposits/banks#index
+                               POST     /admin/deposits/banks(.:format)                     admin/deposits/banks#create
+       new_admin_deposits_bank GET      /admin/deposits/banks/new(.:format)                 admin/deposits/banks#new
+      edit_admin_deposits_bank GET      /admin/deposits/banks/:id/edit(.:format)            admin/deposits/banks#edit
+           admin_deposits_bank GET      /admin/deposits/banks/:id(.:format)                 admin/deposits/banks#show
+                               PATCH    /admin/deposits/banks/:id(.:format)                 admin/deposits/banks#update
+                               PUT      /admin/deposits/banks/:id(.:format)                 admin/deposits/banks#update
+                               DELETE   /admin/deposits/banks/:id(.:format)                 admin/deposits/banks#destroy
+         admin_deposits_ethers GET      /admin/deposits/ethers(.:format)                    admin/deposits/ethers#index
+                               POST     /admin/deposits/ethers(.:format)                    admin/deposits/ethers#create
+      new_admin_deposits_ether GET      /admin/deposits/ethers/new(.:format)                admin/deposits/ethers#new
+     edit_admin_deposits_ether GET      /admin/deposits/ethers/:id/edit(.:format)           admin/deposits/ethers#edit
+          admin_deposits_ether GET      /admin/deposits/ethers/:id(.:format)                admin/deposits/ethers#show
+                               PATCH    /admin/deposits/ethers/:id(.:format)                admin/deposits/ethers#update
+                               PUT      /admin/deposits/ethers/:id(.:format)                admin/deposits/ethers#update
+                               DELETE   /admin/deposits/ethers/:id(.:format)                admin/deposits/ethers#destroy
+       admin_deposits_satoshis GET      /admin/deposits/satoshis(.:format)                  admin/deposits/satoshis#index
+                               POST     /admin/deposits/satoshis(.:format)                  admin/deposits/satoshis#create
+    new_admin_deposits_satoshi GET      /admin/deposits/satoshis/new(.:format)              admin/deposits/satoshis#new
+   edit_admin_deposits_satoshi GET      /admin/deposits/satoshis/:id/edit(.:format)         admin/deposits/satoshis#edit
+        admin_deposits_satoshi GET      /admin/deposits/satoshis/:id(.:format)              admin/deposits/satoshis#show
+                               PATCH    /admin/deposits/satoshis/:id(.:format)              admin/deposits/satoshis#update
+                               PUT      /admin/deposits/satoshis/:id(.:format)              admin/deposits/satoshis#update
+                               DELETE   /admin/deposits/satoshis/:id(.:format)              admin/deposits/satoshis#destroy
+      admin_withdraws_satoshis GET      /admin/withdraws/satoshis(.:format)                 admin/withdraws/satoshis#index
+                               POST     /admin/withdraws/satoshis(.:format)                 admin/withdraws/satoshis#create
+   new_admin_withdraws_satoshi GET      /admin/withdraws/satoshis/new(.:format)             admin/withdraws/satoshis#new
+  edit_admin_withdraws_satoshi GET      /admin/withdraws/satoshis/:id/edit(.:format)        admin/withdraws/satoshis#edit
+       admin_withdraws_satoshi GET      /admin/withdraws/satoshis/:id(.:format)             admin/withdraws/satoshis#show
+                               PATCH    /admin/withdraws/satoshis/:id(.:format)             admin/withdraws/satoshis#update
+                               PUT      /admin/withdraws/satoshis/:id(.:format)             admin/withdraws/satoshis#update
+                               DELETE   /admin/withdraws/satoshis/:id(.:format)             admin/withdraws/satoshis#destroy
+         admin_withdraws_banks GET      /admin/withdraws/banks(.:format)                    admin/withdraws/banks#index
+                               POST     /admin/withdraws/banks(.:format)                    admin/withdraws/banks#create
+      new_admin_withdraws_bank GET      /admin/withdraws/banks/new(.:format)                admin/withdraws/banks#new
+     edit_admin_withdraws_bank GET      /admin/withdraws/banks/:id/edit(.:format)           admin/withdraws/banks#edit
+          admin_withdraws_bank GET      /admin/withdraws/banks/:id(.:format)                admin/withdraws/banks#show
+                               PATCH    /admin/withdraws/banks/:id(.:format)                admin/withdraws/banks#update
+                               PUT      /admin/withdraws/banks/:id(.:format)                admin/withdraws/banks#update
+                               DELETE   /admin/withdraws/banks/:id(.:format)                admin/withdraws/banks#destroy
+        admin_withdraws_ethers GET      /admin/withdraws/ethers(.:format)                   admin/withdraws/ethers#index
+                               POST     /admin/withdraws/ethers(.:format)                   admin/withdraws/ethers#create
+     new_admin_withdraws_ether GET      /admin/withdraws/ethers/new(.:format)               admin/withdraws/ethers#new
+    edit_admin_withdraws_ether GET      /admin/withdraws/ethers/:id/edit(.:format)          admin/withdraws/ethers#edit
+         admin_withdraws_ether GET      /admin/withdraws/ethers/:id(.:format)               admin/withdraws/ethers#show
+                               PATCH    /admin/withdraws/ethers/:id(.:format)               admin/withdraws/ethers#update
+                               PUT      /admin/withdraws/ethers/:id(.:format)               admin/withdraws/ethers#update
+                               DELETE   /admin/withdraws/ethers/:id(.:format)               admin/withdraws/ethers#destroy
+       admin_statistic_members GET      /admin/statistic/members(.:format)                  admin/statistic/members#show
+        admin_statistic_orders GET      /admin/statistic/orders(.:format)                   admin/statistic/orders#show
+        admin_statistic_trades GET      /admin/statistic/trades(.:format)                   admin/statistic/trades#show
+      admin_statistic_deposits GET      /admin/statistic/deposits(.:format)                 admin/statistic/deposits#show
+     admin_statistic_withdraws GET      /admin/statistic/withdraws(.:format)                admin/statistic/withdraws#show
+                  api_v2_mount          /api                                                APIv2::Mount
+
+Routes for MailsViewer::Engine:
+     index GET  /index(.:format)      mails_viewer/home#index
+       raw GET  /raw(.:format)        mails_viewer/home#raw
+      html GET  /html(.:format)       mails_viewer/home#html
+     plain GET  /plain(.:format)      mails_viewer/home#plain
+attachment GET  /attachment(.:format) mails_viewer/home#attachment
+      root GET  /                     mails_viewer/home#index
