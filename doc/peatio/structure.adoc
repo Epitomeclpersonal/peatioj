@@ -97,8 +97,3 @@ $ find . -name "*_controller.rb"
 ```
 ./src/main/java/spec/controllers/authentications/weibo_accounts_controller.rb
 ```
-
-```
-$ find . -name "*.slim"  | wc -l
-274
-```
