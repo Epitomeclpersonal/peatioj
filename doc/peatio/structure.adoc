@@ -63,11 +63,9 @@ $ find . -name "*_controller.rb"
 ./src/main/java/app/controllers/verify/google_auths_controller.rb
 ./src/main/java/app/controllers/verify/sms_auths_controller.rb
 ./src/main/java/app/controllers/webhooks_controller.rb
-./src/main/java/spec/controllers/authentications/weibo_accounts_controller.rb
 ```
 
 * for admin
-
 ```
 ./src/main/java/app/controllers/admin/base_controller.rb
 ./src/main/java/app/controllers/admin/comments_controller.rb
@@ -93,6 +91,11 @@ $ find . -name "*_controller.rb"
 ./src/main/java/app/controllers/admin/withdraws/base_controller.rb
 ./src/main/java/app/controllers/admin/withdraws/ethers_controller.rb
 ./src/main/java/app/controllers/admin/withdraws/satoshis_controller.rb
+```
+
+* for test
+```
+./src/main/java/spec/controllers/authentications/weibo_accounts_controller.rb
 ```
 
 ```
