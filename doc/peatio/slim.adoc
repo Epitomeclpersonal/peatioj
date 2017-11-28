@@ -138,7 +138,7 @@ verify/google_auths/show.html.slim
 verify/sms_auths/show.html.slim
 ```
 
-* ./src/main/resources/templates/lib
+* ./src/main/resources/templates/lib/templates/slim/scaffold
 ```
-/lib/templates/slim/scaffold/_form.html.slim
+_form.html.slim
 ```
