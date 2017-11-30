@@ -1,5 +1,8 @@
 package app.controllers.private1;
 
+import app.models.Market;
+import app.models.OrderAsk;
+import app.models.OrderBid;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +17,7 @@ public class MarketsController extends BaseController {
     private String bid;
     private String ask;
 
-    private String market;
+    private Market market;
     private String markets;
     private String market_groups;
 
@@ -22,8 +25,8 @@ public class MarketsController extends BaseController {
     private String asks;
     private String trades;
 
-    private String order_bid;
-    private String order_ask;
+    private OrderBid order_bid;
+    private OrderAsk order_ask;
 
 /*
     skip_before_action :auth_member!, only: [:show]
@@ -47,8 +50,8 @@ public class MarketsController extends BaseController {
         this.trades = null; // this.market.trades
 
         // default to limit order
-        this.order_bid = null; // OrderBid.new ord_type:'limit'
-        this.order_ask = null; // OrderAsk.new ord_type:'limit'
+        this.order_bid = new OrderBid(/*ord_type:'limit'*/);
+        this.order_ask = new OrderAsk(/*ord_type:'limit'*/);
 
 //        set_member_data if current_user
 //        gon.jbuilder
