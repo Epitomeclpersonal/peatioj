@@ -1,5 +1,8 @@
-module Private
-  class BaseController < ::ApplicationController
+package app.controllers.private1;
+
+//module Private
+public class BaseController /*< ::ApplicationController*/ {
+/*
     before_action :check_email_nil
     before_filter :no_cache, :auth_member!
 
@@ -14,6 +17,6 @@ module Private
     def check_email_nil
       redirect_to new_authentications_email_path if current_user && current_user.email.nil?
     end
-
-  end
-end
+*/
+}
+//end

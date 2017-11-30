@@ -1,5 +1,11 @@
-module Private
-  class MarketsController < BaseController
+package app.controllers.private1;
+
+import org.springframework.stereotype.Controller;
+
+//module Private
+@Controller
+public class MarketsController extends BaseController {
+/*
     skip_before_action :auth_member!, only: [:show]
     before_action :visible_market?
     after_action :set_default_market
@@ -42,5 +48,6 @@ module Private
       @trades_done = Trade.for_member(@market.id, current_user, limit: 100, order: 'id desc')
     end
 
-  end
-end
+*/
+}
+//end
