@@ -1,6 +1,9 @@
 package app.controllers.private1;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +33,8 @@ public class MarketsController extends BaseController {
     layout false
 */
 
-    public ModelAndView show(HttpServletRequest req) {
+    @RequestMapping(value = "/markets/{id}", method = RequestMethod.GET)
+    public ModelAndView show(HttpServletRequest req, @PathVariable("id") String id) {
         this.bid = req.getParameter("bid");
         this.ask = req.getParameter("ask");
 
