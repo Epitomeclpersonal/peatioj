@@ -9,7 +9,7 @@
         <table class="table">
             <tbody>
             <#list current_user.accounts as account >
-            <#--- next unless account.currency_obj.try(:visible)-->
+                <#if account.currency_obj.try(:visible)?><#break></#if>
             <tr class="${account.currency} ${@market.scope?(account) ? '' : 'hide'}">
                 <td class="account-symbol col-xs-6 text-center">
                     <img src="/icon-${account.currency}.png" alt="${account.currency_obj.code_text}"/>
