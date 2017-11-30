@@ -1,4 +1,7 @@
-class OrderBid < Order
+package app.models;
+
+public class OrderBid extends Order {
+/*
 
   has_many :trades, foreign_key: 'bid_id'
 
@@ -32,4 +35,5 @@ class OrderBid < Order
     end
   end
 
-end
+*/
+}

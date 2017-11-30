@@ -1,4 +1,7 @@
-class Order < ActiveRecord::Base
+package app.models;
+
+public class Order /*< ActiveRecord::Base*/ {
+/*
   extend Enumerize
 
   enumerize :bid, in: Currency.enumerize
@@ -156,4 +159,5 @@ class Order < ActiveRecord::Base
     required_funds
   end
 
-end
+*/
+}

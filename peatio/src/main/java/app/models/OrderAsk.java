@@ -1,4 +1,7 @@
-class OrderAsk < Order
+package app.models;
+
+public class OrderAsk extends Order {
+/*
 
   has_many :trades, foreign_key: 'ask_id'
 
@@ -30,4 +33,5 @@ class OrderAsk < Order
     end
   end
 
-end
+*/
+}
