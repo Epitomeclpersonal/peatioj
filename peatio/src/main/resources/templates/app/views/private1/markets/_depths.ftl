@@ -1,3 +1,6 @@
-#depths_wrapper.panel.panel-default
-  .panel-body.panel-body-content
-    #depths
+<div id="depths_wrapper" class="panel panel-default">
+    <div class="panel-body panel-body-content">
+        <div id="depths">
+        </div>
+    </div>
+</div>
