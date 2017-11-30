@@ -1,7 +1,9 @@
 package app.controllers.private1;
 
+import app.controllers.ApplicationController;
+
 //module Private
-public class BaseController /*< ::ApplicationController*/ {
+public class BaseController extends ApplicationController {
 /*
     before_action :check_email_nil
     before_filter :no_cache, :auth_member!
