@@ -16,15 +16,8 @@
     </properties>
 
     <modules>
-        <module>worker-jpa</module>
-        <module>worker-web</module>
-        <module>worker-amqp</module>
-        <module>worker-redis</module>
-        <module>worker-web-secure-jdbc</module>
-        <module>worker-web-method-security</module>
-        <module>worker-secure</module>
-        <module>worker-angular</module>
         <module>peatio</module>
+        <module>sample</module>
     </modules>
 
     <build>

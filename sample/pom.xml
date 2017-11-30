@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>peatioj</artifactId>
+        <groupId>com.epitome.peatioj</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sample</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>worker-jpa</module>
+        <module>worker-web</module>
+        <module>worker-amqp</module>
+        <module>worker-redis</module>
+        <module>worker-web-secure-jdbc</module>
+        <module>worker-web-method-security</module>
+        <module>worker-secure</module>
+        <module>worker-angular</module>
+    </modules>
+
+</project>
