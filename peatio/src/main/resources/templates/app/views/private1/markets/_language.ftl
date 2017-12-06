@@ -4,7 +4,7 @@
         <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-        <#list [I18n.available_locales]  as  lang>
+        <#list I18n.available_locales  as  lang>
             <a href="?lang=#{lang}">
                 <img class="lang-icon" src="/languages/#{lang || I18n.locale}.png">
             </a>
