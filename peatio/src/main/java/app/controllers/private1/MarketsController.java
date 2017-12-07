@@ -41,7 +41,7 @@ public class MarketsController extends BaseController {
         this.bid = req.getParameter("bid");
         this.ask = req.getParameter("ask");
 
-        this.market = null; // current_market();
+        this.market = current_market(req);
         this.markets = null; // Market.all.sort
         this.market_groups = null; // this.markets.map(&:quote_unit).uniq
 

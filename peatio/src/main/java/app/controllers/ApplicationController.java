@@ -1,7 +1,11 @@
 package app.controllers;
 
 import app.helpers.TwoFactorHelper;
+import app.models.Market;
 import config.initializers.ActionController_Base;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 
 public class ApplicationController extends ActionController_Base
         implements  /*SimpleCaptcha::ControllerHelpers,*/ TwoFactorHelper {
@@ -22,11 +26,35 @@ public class ApplicationController extends ActionController_Base
   def currency
     "#{params[:ask]}#{params[:bid]}".to_sym
   end
+*/
 
-  def current_market
-    @current_market ||= Market.find_by_id(params[:market]) || Market.find_by_id(cookies[:market_id]) || Market.first
-  end
+    private Market current_market;
 
+    public Market current_market(HttpServletRequest req) {
+        if (this.current_market == null) {
+            this.current_market = Market.find_by_id(req.getParameter("market"));
+        }
+        if (this.current_market == null) {
+            this.current_market = Market.find_by_id(cookie_val(req.getCookies(), "market_id"));
+        }
+        if (this.current_market == null) {
+            this.current_market = Market.first();
+        }
+        return this.current_market;
+    }
+
+    private String cookie_val(Cookie[] cookies, String name) {
+        String value = null;
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals(name)) {
+                value = cookie.getValue();
+                break;
+            }
+        }
+        return value;
+    }
+
+/*
   def redirect_back_or_settings_page
     if cookies[:redirect_to].present?
       redirect_to cookies[:redirect_to]

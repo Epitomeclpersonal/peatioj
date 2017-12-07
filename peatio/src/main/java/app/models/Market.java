@@ -11,6 +11,13 @@ package app.models;
 // _cny_ is the `quote_unit`.
 
 public class Market /*< ActiveYamlBase*/ {
+    public static Market find_by_id(String market) {
+        return null;
+    }
+
+    public static Market first() {
+        return null;
+    }
 /*
   field :visible, default: true
 
