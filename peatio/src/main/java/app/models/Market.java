@@ -18,6 +18,14 @@ public class Market /*< ActiveYamlBase*/ {
     public static Market first() {
         return null;
     }
+
+    public static Market all() {
+        return null;
+    }
+
+    public String sort() {
+        return null;
+    }
 /*
   field :visible, default: true
 
