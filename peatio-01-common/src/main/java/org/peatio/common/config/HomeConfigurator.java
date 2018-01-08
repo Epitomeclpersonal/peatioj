@@ -1,4 +1,4 @@
-package org.peatio.common;
+package org.peatio.common.config;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -87,8 +87,56 @@ public class HomeConfigurator {
         return home_dir;
     }
 
+
+    ///////////////////////////////////////////////
+    // read only directories
+    ///////////////////////////////////////////////
+    public static String getConfDir() {
+        return getHomeDir() + "/conf";
+    }
+
+    public static String getLibDir() {
+        return getHomeDir() + "/lib";
+    }
+
+    public static String getTestResourcesDir() {
+        return getHomeDir() + "/test/resources";
+    }
+
+    public static String getTestBinDir() {
+        return getHomeDir() + "/test/bin";
+    }
+
+    public static String getProjectDir() {
+        return getHomeDir() + "/..";
+    }
+
+    public static String getAppWorkerDir() {
+        return getHomeDir() + "/../app-worker";
+    }
+
+    public static String getAppMpaaDir() {
+        return getHomeDir() + "/../app-mpaa";
+    }
+
+    ///////////////////////////////////////////////
+    // writable directories
+    ///////////////////////////////////////////////
+    public static String getLogsDir() {
+        return getHomeDir() + "/data/logs";
+    }
+
     public static String getDbDir() {
         return getHomeDir() + "/data/db";
     }
+
+    public static String getActivemqDataDir() {
+        return getHomeDir() + "/data/activemq-data";
+    }
+
+    public static String getTmpDir() {
+        return getHomeDir() + "/data/tmp";
+    }
+
 
 }

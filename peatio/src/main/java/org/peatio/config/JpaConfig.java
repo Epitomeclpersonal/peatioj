@@ -1,6 +1,6 @@
 //package org.peatio.config;
 //
-//import org.peatio.common.HomeConfigurator;
+//import org.peatio.common.config.HomeConfigurator;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.Primary;

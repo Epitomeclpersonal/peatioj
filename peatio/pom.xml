@@ -40,21 +40,23 @@
                             <source>
                                 <directory>${basedir}/src/main/resources/static/app/assets/stylesheets</directory>
                             </source>
-                            <destination>${project.basedir}/src/main/resources/static/app/assets/stylesheets</destination>
+                            <destination>${project.basedir}/src/main/resources/static/app/assets/stylesheets
+                            </destination>
                         </resource>
                         <resource>
                             <source>
                                 <directory>${basedir}/src/main/resources/static/vendor/assets/stylesheets</directory>
                             </source>
-                            <destination>${project.basedir}/src/main/resources/static/vendor/assets/stylesheets</destination>
+                            <destination>${project.basedir}/src/main/resources/static/vendor/assets/stylesheets
+                            </destination>
                         </resource>
                     </resources>
 
-<!--
-                    <gemPaths>
-                        <gemPath>${basedir}/home/gem_dir/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems</gemPath>
-                    </gemPaths>
--->
+                    <!--
+                                        <gemPaths>
+                                            <gemPath>${basedir}/home/gem_dir/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems</gemPath>
+                                        </gemPaths>
+                    -->
 
                 </configuration>
             </plugin>
@@ -72,6 +74,15 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
+        <!-- -->
+        <!-- sub projects -->
+        <!-- -->
+        <dependency>
+            <artifactId>peatio-01-common</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+
 
         <!--
                 <dependency>
@@ -99,12 +110,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-<!--
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
--->
+        <!--
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-data-redis</artifactId>
+                </dependency>
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>

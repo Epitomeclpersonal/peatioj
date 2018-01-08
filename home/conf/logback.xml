@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+    <!-- http://stackoverflow.com/questions/6020545/java-util-logging-logger-to-logback-using-slf4j -->
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <!-- reset all previous level configurations of all j.u.l. loggers -->
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- 콘솔에 출력하는 Appender -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--<filter class="peatio.common.config.SampleFilter" />-->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %5p %40.40c{1}:%4L - [%10.10t] %m%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 매일 새로운 파일로 출력하는 Appender -->
+    <appender name="dailyRollingFileAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${PEATIO_HOME}/data/logs/peatio.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <!--<filter class="peatio.common.config.SampleFilter" />-->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %5p %40.40c{1}:%4L - [%10.10t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="info"/>
+    <logger name="org.springframework.boot" level="warn"/>
+    <logger name="org.springframework.context" level="warn"/>
+    <logger name="org.springframework.messaging" level="info"/>
+    <logger name="org.springframework.orm.jpa" level="warn"/>
+    <logger name="org.springframework.security" level="warn"/>
+    <logger name="org.springframework.security.oauth2" level="warn"/>
+    <logger name="org.springframework.test" level="warn"/>
+    <logger name="org.springframework.transaction" level="warn"/>
+    <logger name="org.springframework.web" level="warn"/>
+    <logger name="org.springframework.web.socket" level="info"/>
+
+    <logger name="springfox.documentation.spring.web" level="warn"/>
+
+    <logger name="com.sun.xml.internal.messaging.saaj.soap" level="info"/>
+    <logger name="com.atomikos" level="warn"/>
+    <logger name="org.dozer" level="warn"/>
+    <logger name="org.hibernate" level="warn"/>
+    <logger name="org.quartz" level="warn"/>
+    <logger name="com4j" level="all"/>
+
+    <!-- for MariaDB4j -->
+    <logger name="ch.vorburger.exec.ManagedProcess" level="warn"/>
+
+    <!-- for mybatis -->
+    <logger name="org.jooq" level="warn"/>
+    <logger name="org.apache.ibatis" level="info"/>
+    <logger name="org.mybatis" level="info"/>
+    <logger name="org.mybatis.generator" level="info"/>
+    <logger name="java.sql" level="info"/>
+
+    <property name="mapper_logger_level" value="info"/>
+    <!-- mapper for init -->
+    <logger name="crtTableDefDataFmt" level="${mapper_logger_level}"/>
+    <logger name="crtTableDefEasyLang" level="${mapper_logger_level}"/>
+    <logger name="crtTableDefSimulation" level="${mapper_logger_level}"/>
+    <logger name="crtTableLogSimulation" level="${mapper_logger_level}"/>
+    <logger name="crtTablePerf" level="${mapper_logger_level}"/>
+    <logger name="crtTableSecurity" level="${mapper_logger_level}"/>
+    <logger name="crtTableSys" level="${mapper_logger_level}"/>
+    <logger name="crtUser" level="${mapper_logger_level}"/>
+    <logger name="insInit" level="${mapper_logger_level}"/>
+    <!-- mapper for dml -->
+    <logger name="generated.com.saladweek.peatio.db.oracle.client" level="${mapper_logger_level}"/>
+    <logger name="com.saladweek.peatio.db.oracle.client" level="${mapper_logger_level}"/>
+    <logger name="CpSvr8092S" level="${mapper_logger_level}"/>
+    <logger name="CpSvr8111S" level="${mapper_logger_level}"/>
+    <logger name="CpSvrNew7221S" level="${mapper_logger_level}"/>
+    <logger name="DataTemplate" level="${mapper_logger_level}"/>
+    <logger name="DataTemplateDDL" level="${mapper_logger_level}"/>
+    <logger name="EasyLangSignal" level="${mapper_logger_level}"/>
+    <logger name="ExecutedStrategySimulation" level="${mapper_logger_level}"/>
+    <logger name="ExpirationDateGroup" level="${mapper_logger_level}"/>
+    <logger name="Fgrn" level="${mapper_logger_level}"/>
+    <logger name="FutureCurOnly" level="${mapper_logger_level}"/>
+    <logger name="FutureCurr" level="${mapper_logger_level}"/>
+    <logger name="FutureJpBid" level="${mapper_logger_level}"/>
+    <logger name="GeneralDdl" level="${mapper_logger_level}"/>
+    <logger name="GeneralDml" level="${mapper_logger_level}"/>
+    <logger name="JavaClass" level="${mapper_logger_level}"/>
+    <logger name="Leading" level="${mapper_logger_level}"/>
+    <logger name="OptionCur" level="${mapper_logger_level}"/>
+    <logger name="OptionCurOnly" level="${mapper_logger_level}"/>
+    <logger name="OptionJpBid" level="${mapper_logger_level}"/>
+    <logger name="PhysicalSymbol" level="${mapper_logger_level}"/>
+    <logger name="Security" level="${mapper_logger_level}"/>
+    <logger name="SimulationReport" level="${mapper_logger_level}"/>
+    <logger name="StockIndexIS" level="${mapper_logger_level}"/>
+    <logger name="StrategyGroup" level="${mapper_logger_level}"/>
+    <logger name="StrategyLog" level="${mapper_logger_level}"/>
+    <logger name="StrategySimulation" level="${mapper_logger_level}"/>
+    <logger name="SystemType" level="${mapper_logger_level}"/>
+    <logger name="UnitStrategySimulation" level="${mapper_logger_level}"/>
+    <logger name="XpoSymbol" level="${mapper_logger_level}"/>
+    <logger name="integrationTestInit" level="${mapper_logger_level}"/>
+    <!-- for jdbcTemplate -->
+    <logger name="org.springframework.jdbc" level="${mapper_logger_level}"/>
+
+
+    <logger name="hsqldb.db" level="warn"/>
+    <logger name="org.dbunit" level="info"/>
+    <logger name="org.apache.activemq" level="info"/>
+    <logger name="jsoup" level="info"/>
+    <logger name="org.docx4j" level="off"/>
+
+    <!-- peatio -->
+    <logger name="com.saladweek.peatio" level="info"/>
+    <logger name="com.saladweek.peatio.cc" level="info"/>
+    <logger name="com.saladweek.peatio.cc.controller" level="info"/>
+    <logger name="com.saladweek.peatio.cc.jdbc" level="info"/>
+    <logger name="com.saladweek.peatio.cc.jms" level="warn"/>
+    <logger name="com.saladweek.peatio.cc.jms.consolequeue.ConsoleQueueListener" level="info"/>
+    <logger name="com.saladweek.peatio.cc.jna" level="info"/>
+    <logger name="com.saladweek.peatio.cc.main" level="debug"/>
+    <logger name="com.saladweek.peatio.dc" level="info"/>
+    <logger name="com.saladweek.peatio.dc.dataformat.DataTemplateDaoImpl" level="info"/>
+    <logger name="com.saladweek.peatio.mc" level="info"/>
+    <logger name="com.saladweek.peatio.sc" level="info"/>
+    <logger name="com.saladweek.peatio.sc.common" level="info"/>
+    <logger name="com.saladweek.peatio.sc.compiler" level="info"/>
+    <logger name="com.saladweek.peatio.sc.compiler.grammar" level="info"/>
+    <logger name="com.saladweek.peatio.sc.compiler.javacompiler" level="info"/>
+    <logger name="com.saladweek.peatio.sc.compiler.classloader" level="info"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder" level="info"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder.UnitStrategySimulatorDataSet" level="info"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder.dataqueue" level="warn"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder.dataqueue.MarketDataProducer" level="warn"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder.dataqueue.TableDataReader" level="info"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder.dataqueue.QueueDataReader" level="info"/>
+    <logger name="com.saladweek.peatio.sc.datafeeder.dataqueue.MarketDataConsumer" level="warn"/>
+    <logger name="com.saladweek.peatio.sc.dataformat" level="info"/>
+    <logger name="com.saladweek.peatio.sc.easylang" level="info"/>
+    <logger name="com.saladweek.peatio.sc.marketdata.MarketDataReceiverProvider" level="info"/>
+    <logger name="com.saladweek.peatio.sc.monitor" level="info"/>
+    <logger name="com.saladweek.peatio.sc.position" level="info"/>
+    <logger name="com.saladweek.peatio.sc.position.SaltManager" level="info"/>
+    <logger name="com.saladweek.peatio.sc.runnable" level="info"/>
+    <logger name="com.saladweek.peatio.sc.simulation" level="info"/>
+    <logger name="com.saladweek.peatio.sc.simulator" level="info"/>
+    <logger name="com.saladweek.peatio.rs.simulation.SimulationServiceApi" level="info"/>
+    <logger name="com.saladweek.peatio.sc.simulator.MarketDataSortMerger" level="info"/>
+    <logger name="com.saladweek.peatio.sc.signal" level="info"/>
+    <logger name="com.saladweek.peatio.sc.xpo" level="info"/>
+    <logger name="com.saladweek.peatio.ss" level="info"/>
+    <logger name="com.saladweek.peatio.ws" level="info"/>
+    <logger name="generated.com.saladweek.peatio.sc.signal" level="info"/>
+
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="dailyRollingFileAppender"/>
+    </root>
+
+</configuration>
