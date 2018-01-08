@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.HSQLDialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            org.hsqldb.jdbc.JDBCDriver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:hsqldb:file:D:/mnt/work/coinvest/home/data/db/hsqldb/mydb
+        </property>
+        <property name="hibernate.default_schema">
+            PUBLIC
+        </property>
+        <property name="hibernate.default_catalog">
+            PUBLIC
+        </property>
+        <property name="hibernate.connection.username">
+            SA
+        </property>
+        <property name="hibernate.connection.password">
+        </property>
+    </session-factory>
+</hibernate-configuration>
