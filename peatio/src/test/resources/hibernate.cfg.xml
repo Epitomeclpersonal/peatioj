@@ -11,7 +11,7 @@
             org.hsqldb.jdbc.JDBCDriver
         </property>
         <property name="hibernate.connection.url">
-            jdbc:hsqldb:file:D:/mnt/work/coinvest/home/data/db/hsqldb/mydb
+            jdbc:hsqldb:file:D:/mnt/work/proj/coinvest/home/data/db/hsqldb/mydb
         </property>
         <property name="hibernate.default_schema">
             PUBLIC
