@@ -16,6 +16,8 @@
     </properties>
 
     <modules>
+        <module>worker-11-database</module>
+        <module>worker-12-model-jpa</module>
         <module>peatio</module>
         <module>sample</module>
     </modules>
@@ -93,6 +95,23 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${io.springfox.version}</version>
             </dependency>
+
+
+            <!-- -->
+            <!-- sub projects -->
+            <!-- -->
+            <dependency>
+                <artifactId>worker-11-database</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>worker-12-model-jpa</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <version>${project.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

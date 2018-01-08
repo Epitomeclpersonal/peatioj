@@ -26,8 +26,8 @@ public class HibernateToolsExampleRunner {
         logger.info("**** Generating entity classes ****");
 
         try {
-            final File destDir = new File("./worker-12-model-mybatis/src/main/java");
-            final File hibernateConfig = new File("./peatio/src/test/resources/hibernate.cfg.xml");
+            final File hibernateConfig = new File("./worker-11-database/src/main/resources/hibernate.cfg.xml");
+            final File destDir = new File("./worker-12-model-jpa/src/main/java");
 
             final HibernateToolTask entityGenerator = new HibernateToolTask();
             entityGenerator.setDestDir(destDir);
