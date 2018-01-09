@@ -14,6 +14,7 @@ import org.peatio.common.config.DBTYPE;
 import org.peatio.common.config.MyProperties;
 import org.peatio.common.exception.ServerWarningException;
 import org.peatio.db.jdbc.hsqldb.HsqldbWrapper;
+import org.peatio.db.jdbc.mysql.MysqlWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -231,6 +232,7 @@ public class DatabaseMgr {
     }
 
     private HsqldbWrapper hsqldbWrapper;
+    private MysqlWrapper mysqlWrapper;
 
     public void startDB() {
         startDB(this.def_url, this.dbtype);
@@ -255,6 +257,8 @@ public class DatabaseMgr {
             case H2DB:
                 break;
             case MARIADB:
+                mysqlWrapper = new MysqlWrapper();
+                mysqlWrapper.start();
                 break;
             case MYSQL:
                 break;
@@ -269,6 +273,11 @@ public class DatabaseMgr {
                 this.hsqldbWrapper.stop();
                 logger.info("hsqldbWrapper stopped.");
             }
+
+            if (mysqlWrapper != null) {
+                mysqlWrapper.stop();
+            }
+
         } catch (Exception e) {
             logger.error(ExceptionUtils.getStackTrace(e));
         }
