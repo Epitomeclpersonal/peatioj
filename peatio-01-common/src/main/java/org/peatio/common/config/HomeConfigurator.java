@@ -1,7 +1,11 @@
 package org.peatio.common.config;
 
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.slf4j.LoggerFactory;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import java.io.File;
 import java.io.IOException;
@@ -138,5 +142,34 @@ public class HomeConfigurator {
         return getHomeDir() + "/data/tmp";
     }
 
+
+    // for logback
+    public static void changeLogConfiguration() {
+        // for jul - http://stackoverflow.com/questions/6020545/java-util-logging-logger-to-logback-using-slf4j
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
+
+        // log 디렉토리가 없으면 생성
+        File logDir = new File(getLogsDir());
+        if (!logDir.exists()) {
+            logDir.mkdir();
+        }
+//        if (logPropertyFile == null) {
+        String config_file = getConfDir() + "/logback.xml";
+        try {
+            LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+            context.reset();
+            System.setProperty(CONFIG_SERVER_HOME, getHomeDir());
+            JoranConfigurator configurator = new JoranConfigurator();
+            configurator.setContext(context);
+            configurator.doConfigure(config_file);
+            System.out.println("Wow! I'm configured! - " + config_file);
+        } catch (Exception e) {
+            // DAMN! I'm not....
+            e.printStackTrace();
+        }
+//            logPropertyFile = config_file;
+//        }
+    }
 
 }

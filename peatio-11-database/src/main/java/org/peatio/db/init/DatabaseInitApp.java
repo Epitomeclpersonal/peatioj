@@ -1,6 +1,7 @@
 package org.peatio.db.init;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.peatio.common.config.HomeConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,6 +11,8 @@ public class DatabaseInitApp {
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public static void main(String[] args) {
+        HomeConfigurator.changeLogConfiguration();
+
         logger.info("DatabaseInitApp - start");
         DatabaseInitApp serverInit = new DatabaseInitApp();
         try {

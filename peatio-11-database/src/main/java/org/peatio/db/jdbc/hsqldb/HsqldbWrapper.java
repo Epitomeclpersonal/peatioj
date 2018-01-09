@@ -1,4 +1,4 @@
-package org.peatio.db.jdbc;
+package org.peatio.db.jdbc.hsqldb;
 
 import org.apache.commons.io.FileUtils;
 import org.hsqldb.DatabaseURL;

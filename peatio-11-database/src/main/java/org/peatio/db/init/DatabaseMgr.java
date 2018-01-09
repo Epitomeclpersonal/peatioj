@@ -13,7 +13,7 @@ import org.peatio.common.config.AppConfInfo;
 import org.peatio.common.config.DBTYPE;
 import org.peatio.common.config.MyProperties;
 import org.peatio.common.exception.ServerWarningException;
-import org.peatio.db.jdbc.HsqldbWrapper;
+import org.peatio.db.jdbc.hsqldb.HsqldbWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
