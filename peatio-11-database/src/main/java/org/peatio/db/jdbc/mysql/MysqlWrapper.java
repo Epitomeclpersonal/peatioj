@@ -16,6 +16,7 @@ import static com.wix.mysql.distribution.Version.v5_7_latest;
 public class MysqlWrapper {
 
     public static void main(String[] aa) {
+        HomeConfigurator.changeLogConfiguration();
         MysqlWrapper mysqlWrapper = new MysqlWrapper();
         mysqlWrapper.start();
     }
