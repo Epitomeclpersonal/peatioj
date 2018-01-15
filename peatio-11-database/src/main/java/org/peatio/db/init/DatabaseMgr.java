@@ -216,7 +216,7 @@ public class DatabaseMgr {
     private DataSource datasourceLocalDefdbSystem() {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(this.def_driverClassname);
-        basicDataSource.setUrl(this.def_url);
+        basicDataSource.setUrl("jdbc:mysql://localhost:3310/mysql");
         basicDataSource.setUsername(this.def_system_username);
         basicDataSource.setPassword(this.def_system_password);
         return basicDataSource;
