@@ -257,10 +257,10 @@ public class DatabaseMgr {
             case H2DB:
                 break;
             case MARIADB:
-                mysqlWrapper = new MysqlWrapper();
-                mysqlWrapper.start();
                 break;
             case MYSQL:
+                mysqlWrapper = new MysqlWrapper();
+                mysqlWrapper.start();
                 break;
             case PGSQL:
                 break;

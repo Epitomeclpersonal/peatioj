@@ -64,7 +64,7 @@
 
 
     <logger name="hsqldb.db" level="warn"/>
-    <logger name="com.wix" level="info"/>
+    <logger name="com.wix.mysql" level="debug"/>
     <logger name="org.dbunit" level="info"/>
     <logger name="org.apache.activemq" level="info"/>
     <logger name="jsoup" level="info"/>
