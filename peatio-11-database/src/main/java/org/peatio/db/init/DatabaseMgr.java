@@ -14,6 +14,7 @@ import org.peatio.common.config.DBTYPE;
 import org.peatio.common.config.MyProperties;
 import org.peatio.common.exception.ServerWarningException;
 import org.peatio.db.jdbc.hsqldb.HsqldbWrapper;
+import org.peatio.db.jdbc.mariadb.MariadbWrapper;
 import org.peatio.db.jdbc.mysql.MysqlWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -232,6 +233,7 @@ public class DatabaseMgr {
     }
 
     private HsqldbWrapper hsqldbWrapper;
+    private MariadbWrapper mariadbWrapper;
     private MysqlWrapper mysqlWrapper;
 
     public void startDB() {
@@ -257,6 +259,16 @@ public class DatabaseMgr {
             case H2DB:
                 break;
             case MARIADB:
+                try {
+                    this.mariadbWrapper = new MariadbWrapper(database_url);
+                    this.mariadbWrapper.start();
+                    if (!this.mariadbWrapper.isStarted()) {
+                        throw new ServerWarningException("mariadb does not started");
+                    }
+                    logger.info("mariadbWrapper started.");
+                } catch (Exception e) {
+                    logger.error(ExceptionUtils.getStackTrace(e));
+                }
                 break;
             case MYSQL:
                 mysqlWrapper = new MysqlWrapper();
@@ -272,6 +284,11 @@ public class DatabaseMgr {
             if (this.hsqldbWrapper != null && this.hsqldbWrapper.isStarted()) {
                 this.hsqldbWrapper.stop();
                 logger.info("hsqldbWrapper stopped.");
+            }
+
+            if (this.mariadbWrapper != null && this.mariadbWrapper.isStarted()) {
+                this.mariadbWrapper.stop();
+                logger.info("mariadbWrapper stopped:");
             }
 
             if (mysqlWrapper != null) {
