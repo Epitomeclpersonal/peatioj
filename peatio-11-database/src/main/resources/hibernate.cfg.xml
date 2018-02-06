@@ -5,13 +5,13 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">
-            org.hibernate.dialect.MySQLDialect
+            org.hibernate.dialect.MySQL5InnoDBDialect
         </property>
         <property name="hibernate.connection.driver_class">
             org.mariadb.jdbc.Driver
         </property>
         <property name="hibernate.connection.url">
-            jdbc:mariadb://localhost:3306/mydb
+            jdbc:mariadb://localhost:3306
         </property>
         <property name="hibernate.default_schema">
             peatio_development
