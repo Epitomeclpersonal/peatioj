@@ -66,6 +66,19 @@
 
     <dependencies>
 
+        <!-- -->
+        <!-- sub projects -->
+        <!-- -->
+        <dependency>
+            <artifactId>peatio-11-database</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>peatio-21-service-jpa</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+
+
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

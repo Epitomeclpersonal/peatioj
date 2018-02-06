@@ -20,7 +20,7 @@
         <module>peatio-11-database</module>
         <module>peatio-12-model-jpa</module>
         <module>peatio-21-service-jpa</module>
-        <module>peatio</module>
+        <module>peatio-41-webapp</module>
         <module>sample</module>
     </modules>
 
@@ -193,6 +193,11 @@
             </dependency>
             <dependency>
                 <artifactId>peatio-21-service-jpa</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>peatio-41-webapp</artifactId>
                 <groupId>${project.groupId}</groupId>
                 <version>${project.version}</version>
             </dependency>
