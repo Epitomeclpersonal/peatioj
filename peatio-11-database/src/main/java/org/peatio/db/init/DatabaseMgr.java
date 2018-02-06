@@ -97,6 +97,8 @@ public class DatabaseMgr {
             case H2DB:
                 break;
             case MARIADB:
+                data_dir = MariadbWrapper.destroyDb();
+                logger.info("removed: {}", data_dir);
                 break;
             case MYSQL:
                 break;
@@ -217,7 +219,7 @@ public class DatabaseMgr {
     private DataSource datasourceLocalDefdbSystem() {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(this.def_driverClassname);
-        basicDataSource.setUrl("jdbc:mysql://localhost:3310/mysql");
+        basicDataSource.setUrl(this.def_url);
         basicDataSource.setUsername(this.def_system_username);
         basicDataSource.setPassword(this.def_system_password);
         return basicDataSource;
