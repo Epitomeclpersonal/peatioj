@@ -4,10 +4,14 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.hibernate.tool.ant.Hbm2JavaExporterTask;
 import org.hibernate.tool.ant.HibernateToolTask;
 import org.hibernate.tool.ant.JDBCConfigurationTask;
+import org.hsqldb.server.ServerAcl;
+import org.peatio.db.init.DatabaseInitApp;
+import org.peatio.db.init.DatabaseMgr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
 /**
@@ -22,8 +26,12 @@ public class HibernateToolsExampleRunner {
 
     private static final String PACKAGE_NAME = "generated.com.saladweek.paprika.db.hsqldb.entity";
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws ServerAcl.AclFormatException, IOException {
         logger.info("**** Generating entity classes ****");
+
+        DatabaseInitApp.main(null);
+        DatabaseMgr databaseMgr = new DatabaseMgr();
+        databaseMgr.startDB();
 
         try {
             final File hibernateConfig = new File("./peatio-11-database/src/main/resources/hibernate.cfg.xml");
@@ -49,6 +57,7 @@ public class HibernateToolsExampleRunner {
         } catch (Throwable e) {
             logger.error(ExceptionUtils.getStackTrace(e));
         } finally {
+            databaseMgr.stopDB();
             System.exit(0);
         }
     }
