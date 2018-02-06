@@ -19,6 +19,7 @@
         <module>peatio-01-common</module>
         <module>peatio-11-database</module>
         <module>peatio-12-model-jpa</module>
+        <module>peatio-21-service-jpa</module>
         <module>peatio</module>
         <module>sample</module>
     </modules>
@@ -187,6 +188,11 @@
             </dependency>
             <dependency>
                 <artifactId>peatio-12-model-jpa</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>peatio-21-service-jpa</artifactId>
                 <groupId>${project.groupId}</groupId>
                 <version>${project.version}</version>
             </dependency>

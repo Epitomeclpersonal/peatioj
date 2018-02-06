@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>peatioj</artifactId>
+        <groupId>com.epitome.peatioj</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>peatio-21-service-jpa</artifactId>
+
+
+    <dependencies>
+
+        <!-- -->
+        <!-- sub projects -->
+        <!-- -->
+        <dependency>
+            <artifactId>peatio-01-common</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>peatio-12-model-jpa</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
