@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>peatioj</artifactId>
+        <groupId>com.epitome.peatioj</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>peatio-22-service-matching</artifactId>
+
+
+    <dependencies>
+
+        <!-- -->
+        <!-- sub projects -->
+        <!-- -->
+        <dependency>
+            <artifactId>peatio-01-common</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>peatio-12-model-jpa</artifactId>
+            <groupId>${project.groupId}</groupId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>it.unimi.dsi</groupId>
+            <artifactId>fastutil</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paritytrading.foundation</groupId>
+            <artifactId>foundation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paritytrading.nassau</groupId>
+            <artifactId>nassau-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paritytrading.nassau</groupId>
+            <artifactId>nassau-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paritytrading.philadelphia</groupId>
+            <artifactId>philadelphia-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.paritytrading.philadelphia</groupId>
+            <artifactId>philadelphia-fix44</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.jvirtanen.config</groupId>
+            <artifactId>config-extras</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jvirtanen.util</groupId>
+            <artifactId>util-extras</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jvirtanen.value</groupId>
+            <artifactId>value</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>

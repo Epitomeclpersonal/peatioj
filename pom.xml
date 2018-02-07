@@ -13,13 +13,18 @@
         <java.version>1.8</java.version>
         <org.springframework.boot.version>1.5.8.RELEASE</org.springframework.boot.version>
         <io.springfox.version>2.7.0</io.springfox.version>
+
+        <nassau.version>0.13.0</nassau.version> <!-- (mentioned in documentation) -->
+        <philadelphia.version>0.6.0</philadelphia.version>
     </properties>
+
 
     <modules>
         <module>peatio-01-common</module>
         <module>peatio-11-database</module>
         <module>peatio-12-model-jpa</module>
         <module>peatio-21-service-jpa</module>
+        <module>peatio-22-service-matching</module>
         <module>peatio-41-webapp</module>
         <module>sample</module>
     </modules>
@@ -173,6 +178,56 @@
             </dependency>
 
 
+            <dependency>
+                <groupId>it.unimi.dsi</groupId>
+                <artifactId>fastutil</artifactId>
+                <version>8.1.0</version> <!-- (mentioned in documentation) -->
+            </dependency>
+            <dependency>
+                <groupId>com.paritytrading.foundation</groupId>
+                <artifactId>foundation</artifactId>
+                <version>0.2.1</version> <!-- (mentioned in documentation) -->
+            </dependency>
+            <dependency>
+                <groupId>com.paritytrading.nassau</groupId>
+                <artifactId>nassau-core</artifactId>
+                <version>${nassau.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.paritytrading.nassau</groupId>
+                <artifactId>nassau-util</artifactId>
+                <version>${nassau.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.paritytrading.philadelphia</groupId>
+                <artifactId>philadelphia-core</artifactId>
+                <version>${philadelphia.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.paritytrading.philadelphia</groupId>
+                <artifactId>philadelphia-fix44</artifactId>
+                <version>${philadelphia.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jvirtanen.config</groupId>
+                <artifactId>config-extras</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvirtanen.util</groupId>
+                <artifactId>util-extras</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvirtanen.value</groupId>
+                <artifactId>value</artifactId>
+                <version>0.1.0</version>
+                <scope>test</scope>
+            </dependency>
+
+
             <!-- -->
             <!-- sub projects -->
             <!-- -->
@@ -193,6 +248,11 @@
             </dependency>
             <dependency>
                 <artifactId>peatio-21-service-jpa</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>peatio-22-service-matching</artifactId>
                 <groupId>${project.groupId}</groupId>
                 <version>${project.version}</version>
             </dependency>
