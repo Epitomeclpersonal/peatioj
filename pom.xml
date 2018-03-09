@@ -26,6 +26,7 @@
         <module>peatio-21-service-jpa</module>
         <module>peatio-22-service-matching</module>
         <module>peatio-41-webapp</module>
+        <module>peatio-42-jhipster</module>
     </modules>
 
     <build>
